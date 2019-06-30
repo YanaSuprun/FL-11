@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="http://fonts.googleapis.com/css?family=Open+Sans" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>CSS Layouts</title>
+</head>
+<body>
+    <header class="header">
+        <div class="wrap-container">
+            <div class="logo">Lorem & Ipsum</div>
+            <ul class="menu log-menu">
+                <li class="log-menu-item">
+                    <a href="#" class="menu-item-link">Login</a>
+                </li>
+                <li class="log-menu-item">
+                    <a href="#" class="menu-item-link">Signup</a>
+                </li>
+            </ul>
+        </div>
+
+        <h1 class="header-heading">Lorem <span>&</span> Ipsum</h1>
+        <p class="header-text">an original brand since 1965</p>
+
+        <nav class="nav">
+            <ul class="menu main-menu">
+                <li class="main-menu-item">
+                    <a href="#" class="menu-item-link">Careers</a>
+                </li>
+                <li class="main-menu-item">
+                    <a href="#" class="menu-item-link">About</a>
+                </li>
+                <li class="main-menu-item">
+                    <a href="#" class="menu-item-link">Show More</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="main-triangle">
+            <p class="text text-right">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit delectus quos nemo at! Voluptate voluptatem in
+                earum dolore ducimus. Illum non nam neque eos dolorem necessitatibus atque, incidunt quibusdam id?
+            </p>
+            <p class="text text-left">
+                Lorem ipsum dolor, consectetur adipisicing. Aenean <span>commodo ligua</span> eged dolor.
+            </p>
+        </div>
+
+        <section class="section">
+            <h2 class="section-heading">Read some of our <span>featured articles</span></h2>
+
+            <div class="article">
+                <div class="article-pic">
+                    <img src="./img/sample-1.jpg" alt="img">
+                    <a href="#" class="item-likes">154&#9829;</a>
+                    <span class="item-data">July 18 Spain</span>
+                </div>
+                <div class="article-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                </div>
+            </div>
+
+            <div class="article">
+                <div class="article-pic">
+                    <img src="./img/sample-2.jpg" alt="img">
+                    <a href="#" class="item-likes">172&#9829;</a>
+                    <span class="item-data">January 15 South France</span>
+                </div>
+                <div class="article-text">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ipsam accusantium suscipit iste totam eligendi non
+                        repudiandae, debitis quam voluptatem.
+                    </p>
+                </div>
+            </div>
+
+            <div class="news">
+
+                <ul class="news-list">
+                    <li class="news-item article-pic">
+                        <img src="./img/news-list-1.jpg" alt="img">
+                        <a href="#" class="item-likes">10&#9829;</a>
+                        <button class="item-full-btn btn">Explore</button>
+                        <span class="item-data">January 18 Greece</span>
+                    </li>
+                    <li class="news-item article-pic">
+                        <img src="./img/news-list-2.jpg" alt="img">
+                        <a href="#" class="item-likes">35&#9829;</a>
+                        <button class="item-full-btn btn">Explore</button>
+                        <span class="item-data">June 18 Italy</span>
+                    </li>
+                    <li class="news-item article-pic">
+                        <img src="./img/news-list-3.jpg" alt="img">
+                        <a href="#" class="item-likes">199&#9829;</a>
+                        <button class="item-full-btn btn">Explore</button>
+                        <span class="item-data">December 11 USA</span>
+
+                    </li>
+                    <li class="news-item article-pic">
+                        <img src="./img/news-list-4.jpg" alt="img">
+                        <a href="#" class="item-likes">88&#9829;</a>
+                        <button class="item-full-btn btn">Explore</button>
+                        <span class="item-data">May 25 Germany</span>
+                    </li>
+                </ul>
+
+                <button class="btn load-news-btn">Load news</button>
+            </div>
+        </section>
+
+        <div class="subscribe">
+            <p class="subscribe-text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque culpa, quos beatae commodi iste
+                iusto earum quod? Blanditiis in esse reprehenderit? Illo doloremque facilis laborum molestiae maiores sit,
+                quidem vel?
+            </p>
+            <div class="form-container">
+                <form>
+                    <label for="email" class="subscribe-label">Subscribe to our <span>newsletter</span></label>
+                    <input type="email" id="email"  class="subscribe-input" placeholder="Enter your e-mail">
+                    <button class="btn subscribe-btn">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="copyright">&copy; 2019 Epam</p>
+        <ul class="menu footer-menu">
+            <li class="footer-menu-item">
+                <a href="">Home</a>
+            </li>
+            <li class="footer-menu-item">
+                <a href="">About</a>
+            </li>
+            <li class="footer-menu-item">
+                <a href="">Shop</a>
+            </li>
+            <li class="footer-menu-item">
+                <a href="">Vacancies</a>
+            </li>
+        </ul>
+    </footer>
+</body>
+</html>
