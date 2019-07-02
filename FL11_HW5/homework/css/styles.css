@@ -139,6 +139,11 @@ p {
   opacity: 0.5;
 }
 
+.picture > img,
+.post-heading {
+  transition: opacity .5s linear;
+}
+
 .post-content {
   padding: 2em;
 }
