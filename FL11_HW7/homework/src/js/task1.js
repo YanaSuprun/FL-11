@@ -1,6 +1,6 @@
 const minLoginLength = 6;
 const minNewPasswordLength = 5;
-const login = prompt('Enter your email', '');
+const login = prompt('Enter your email');
 
 if (login === null || login.length === 0) {
   alert('canceled');
@@ -24,12 +24,12 @@ if (login === null || login.length === 0) {
         alert('Canceled');
       } else if (login === 'user@gmail.com' && oldPassword === 'UserPass' ||
                 login === 'admin@gmail.com' && oldPassword === 'AdminPass') {
-        const newPassword = prompt('Enter new password', '');
+        const newPassword = prompt('Enter new password');
 
         if (newPassword.length < minNewPasswordLength) {
           alert('It’s too short password. Sorry.');
         } else {
-          const newPasswordConfirm = prompt('Enter new password again', '');
+          const newPasswordConfirm = prompt('Enter new password again');
 
           if (newPasswordConfirm === newPassword) {
             alert('You have successfully changed your password.');

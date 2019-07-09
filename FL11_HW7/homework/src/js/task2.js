@@ -3,14 +3,14 @@ const min = 0;
 let max = 8;
 let currentPrize = 0;
 let possiblePrize = 100;
-let rangeIncreaser = 4;
-let prizeIncreaser = 2;
-let prizeDivider = 2;
+const rangeIncreaser = 4;
+const prizeIncreaser = 2;
+const prizeDivider = 2;
 
 
 while (playStart === true) {
   let attempts = 3;
-  let randomNumber = Math.floor(Math.random() * (max + 1 - min));
+  const randomNumber = Math.floor(Math.random() * (max + 1 - min));
   console.log(randomNumber);
 
   if (playStart === false) {
@@ -18,10 +18,10 @@ while (playStart === true) {
   } else {
     let i = 0;
     while (i < attempts) {
-      let userNumber = +prompt(`Choose a roulette pocket number from ${min} to ${max}\n
+      let userNumber = parseFloat(prompt(`Choose a roulette pocket number from ${min} to ${max}\n
                                 Attempts left: ${attempts}\n
                                 Total prize: ${currentPrize}$\n
-                                Possible prize on current attempt: ${possiblePrize}$`);
+                                Possible prize on current attempt: ${possiblePrize}$`));
       attempts --;
 
       if (userNumber === randomNumber) {
