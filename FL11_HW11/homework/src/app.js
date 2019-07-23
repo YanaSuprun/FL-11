@@ -1,8 +1,10 @@
 let rootNode = document.getElementById('root');
+const todo = document.getElementById('todo-list')
 const newTaskBtn = document.getElementById('new-task-btn');
 const tasksList = document.getElementById('task-list');
-let newTaskInput = document.getElementById('new-task');
+const newTaskInput = document.getElementById('new-task');
 
+newTaskBtn.addEventListener('click', addNewTask);
 
 function createElement(tag, className) {
     const element = document.createElement(tag);
@@ -15,15 +17,19 @@ function checkItemQuantity(list) {
     if(list.children.length > maxLength) {
         let message = createElement('p', 'message');
         message.innerHTML = 'Maximum item per list are created!';
-        list.insertBefore(message, list.children[0]);
+        todo.insertBefore(message, todo.children[2]);
         newTaskInput.disabled = 'disabled';
         newTaskBtn.removeEventListener('click', addNewTask);
     }
 }
 
-newTaskBtn.addEventListener('click', addNewTask);
-
 function addNewTask() {
+    if(newTaskInput.value) {
+        createNewTask();
+    }
+}
+
+function createNewTask() {
     checkItemQuantity(tasksList);
 
     let newTask = document.getElementById('new-task').value;
@@ -62,8 +68,7 @@ function addNewTask() {
     iconRemoveBtn.innerHTML = 'delete';
     removeBtnElem.appendChild(iconRemoveBtn);
 
-
-    // Function edit li
+    // edit task
     editBtnElem.addEventListener('click', editTask)
 
     function editTask() {
@@ -92,14 +97,14 @@ function addNewTask() {
 
         function saveUpdatedTask() {
             TaskElem.innerHTML = inputItemEdit.value;
-            taskItem.style.display = 'block';
+            taskItem.style.display = 'flex';
             taskItemEditContainer.style.display = 'none';
         }
     }
 
     // check task
     checkBtnElem.addEventListener('click', markDoneTask);
-    
+
     function markDoneTask() {
         const markIconElem = createElement('i', 'material-icons');
         markIconElem.innerHTML = 'done';
@@ -176,8 +181,3 @@ function addNewTask() {
     [].forEach.call(cols, addDnDHandlers);
 
 }
-
-
-
-
-
