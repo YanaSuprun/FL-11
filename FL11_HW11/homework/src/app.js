@@ -68,58 +68,6 @@ function createNewTask() {
     iconRemoveBtn.innerHTML = 'delete';
     removeBtnElem.appendChild(iconRemoveBtn);
 
-    // edit task
-    editBtnElem.addEventListener('click', editTask)
-
-    function editTask() {
-        taskItem.style.display = 'none';
-
-        const taskItemEditContainer = createElement('div', 'task-item-edit');
-        taskItemContainer.appendChild(taskItemEditContainer);
-
-        // create input
-        const inputItemEdit = createElement('input', 'edit-task-input');
-        taskItemEditContainer.appendChild(inputItemEdit);
-
-        // create button
-        const saveBtnElem = createElement('button', 'save-btn');
-        saveBtnElem.classList.add('remove-btn-style');
-        taskItemEditContainer.appendChild(saveBtnElem);
-
-        // create icon
-        const markIconElem = createElement('i', 'material-icons');
-        markIconElem.innerHTML = 'save';
-        saveBtnElem.appendChild(markIconElem);
-
-
-        // updated task
-        saveBtnElem.addEventListener('click', saveUpdatedTask);
-
-        function saveUpdatedTask() {
-            TaskElem.innerHTML = inputItemEdit.value;
-            taskItem.style.display = 'flex';
-            taskItemEditContainer.style.display = 'none';
-        }
-    }
-
-    // check task
-    checkBtnElem.addEventListener('click', markDoneTask);
-
-    function markDoneTask() {
-        const markIconElem = createElement('i', 'material-icons');
-        markIconElem.innerHTML = 'done';
-        checkBtnElem.appendChild(markIconElem);
-
-        checkBtnElem.removeEventListener('click', markDoneTask);
-    }
-
-    // delete task
-    removeBtnElem.addEventListener('click', removeTask);
-
-    function removeTask() {
-        taskItemContainer.remove();
-    }
-
     // dragable
     let dragElement = null;
 
@@ -164,8 +112,10 @@ function createNewTask() {
     }
 
     function handleDragEnd() {
+        console.log(this);
         this.classList.remove('over');
         this.classList.remove('dragElem');
+        bindTaskEvents(this);
     }
 
     function addDnDHandlers(elem) {
@@ -180,4 +130,67 @@ function createNewTask() {
     console.log(cols);
     [].forEach.call(cols, addDnDHandlers);
 
+    bindTaskEvents(taskItemContainer);
+
+    return taskItemContainer;
+}
+
+function bindTaskEvents(item) {
+    let checkBtn = item.querySelector('.checkbox');
+    let editBtn = item.querySelector('.edit');
+    let removeBtn = item.querySelector('.remove');
+
+    checkBtn.addEventListener('click', markDoneTask);
+    editBtn.addEventListener('click', editTask);
+    removeBtn.addEventListener('click', removeTask);
+}
+
+function markDoneTask() {
+    console.log(this);
+    const markIconElem = createElement('i', 'material-icons');
+    markIconElem.innerHTML = 'done';
+    this.appendChild(markIconElem);
+    this.removeEventListener('click', markDoneTask);
+}
+
+function editTask() {
+    console.log(this);
+    this.parentNode.style.display = 'none';
+    const itemLi = this.parentNode.parentNode;
+
+    const taskItemEditContainer = createElement('div', 'task-item-edit');
+    itemLi.appendChild(taskItemEditContainer);
+
+    // create input
+    const inputItemEdit = createElement('input', 'edit-task-input');
+    taskItemEditContainer.appendChild(inputItemEdit);
+
+    // create button
+    const saveBtnElem = createElement('button', 'save-btn');
+    saveBtnElem.classList.add('remove-btn-style');
+    taskItemEditContainer.appendChild(saveBtnElem);
+
+    // create icon
+    const markIconElem = createElement('i', 'material-icons');
+    markIconElem.innerHTML = 'save';
+    saveBtnElem.appendChild(markIconElem);
+
+
+    // updated task
+    saveBtnElem.addEventListener('click', saveUpdatedTask);
+
+    function saveUpdatedTask() {
+        console.log(this);
+        itemLi.children[0].style.display = 'flex';
+        itemLi.children[0].children[1].innerHTML = this.parentNode.children[0].value;
+        taskItemEditContainer.style.display = 'none';
+    }
+}
+
+function removeTask () {
+    console.log(this);
+    let taskItem = this.parentNode;    
+    let li = taskItem.parentNode;
+    let ul = li.parentNode;    
+    ul.removeChild(li);
 }
