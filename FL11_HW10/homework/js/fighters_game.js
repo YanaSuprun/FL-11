@@ -1,7 +1,8 @@
 class Fighter {
   constructor(settings) {
-    settings.wins = 0;
-    settings.loses = 0;
+    let wins = 0;
+    let loses = 0;
+    const maxHealth = settings.hp;
 
     this.getName = () => settings.name;
     this.getDamage = () => settings.damage;
@@ -26,13 +27,12 @@ class Fighter {
     };
 
     this.heal = (health) => {
-      const maxHealth = 100;
       settings.hp + health > maxHealth ? settings.hp = maxHealth : settings.hp += health;
     };
 
-    this.logCombatHistory = () => `Name: ${settings.name}, Wins: ${settings.wins}, Loses: ${settings.loses}`;
-    this.addWin = () => settings.wins++;
-    this.addLoss = () => settings.loses++;
+    this.logCombatHistory = () => `Name: ${settings.name}, Wins: ${wins}, Loses: ${loses}`;
+    this.addWin = () => wins++;
+    this.addLoss = () => loses++;
   }
 }
 
