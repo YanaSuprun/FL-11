@@ -1,0 +1,66 @@
+@import "variables";
+
+.navbar {
+  .navbar-nav {
+    .active {
+      background-color: @navbar-active-item-bg;
+
+      .nav-link {
+        color: @white;
+      }
+
+      .nav-link:hover {
+        color: @navbar-active-item-hover-color;
+      }
+    }
+  }
+}
+
+.item {
+  border: 1px solid;
+  margin-bottom: 20px;
+
+  .heading {
+    color: @white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 0;
+  }
+}
+
+.theme1 {
+  border-color: @theme1-color;
+
+  .heading {
+    background-color: @theme1-color;
+  }
+}
+
+.theme2 {
+  border-color: @theme2-color;
+
+  .heading {
+    background-color: @theme2-color;
+  }
+}
+
+.theme3 {
+  border-color: @theme3-color;
+
+  .heading {
+    background-color: @theme3-color;
+  }
+}
+
+.theme4 {
+  border-color: @theme4-color;
+
+  .heading {
+    background-color: @theme4-color;
+  }
+}
+
+h2, h4 {
+  color: @headers-color
+}
