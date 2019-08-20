@@ -65,7 +65,7 @@ const charizard = new Charizard();
 // Electric pokemons
 
 function Pichu() {
-  Pokemon.call(this)
+  Pokemon.call(this, arguments);
   this.type = this.constructor.name;
   this.pokemonType = 'Electric';
   this.specie = 'Mouse Pokemon';
@@ -118,5 +118,5 @@ const raichu = new Raichu();
 // console.log(raichu);
 // console.log(pichu.getType());
 // console.log(raichu.getSpecie());
-// console.log(pichu.evolve()); // Raichu
+// console.log(pichu.evolve()); // Pikachu
 // console.log(pikachu.getSpecie()); // -> “Mouse Pokémon”
